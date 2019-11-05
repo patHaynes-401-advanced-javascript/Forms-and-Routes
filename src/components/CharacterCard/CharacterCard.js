@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function CharacterCard({ _id, name, image }) {
+export default function CharacterCard({ name, image }) {
   return (
-    <div >
+    <div>
       <header><h3>{name || null}</h3></header>
       <figure>
         <img src={image} alt={name} />

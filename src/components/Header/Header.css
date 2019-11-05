@@ -1,18 +1,17 @@
 body {
   margin: 0;
 }
+.Header {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, sans-serif;
+    font-size: 40pt;
+    color: white;
+    margin-top: 0;
 
-header {
-  background-color: black;
-  height: 200px;
-}
+    h1 {
+      color: blue;
+    }
+  }
 
-h1 {
-  display: flex;
-  justify-content: center;
-  font-family: Impact, Haettenschweiler, sans-serif;
-  font-size: 40pt;
-  color: white;
-  margin-left: 30px;
-  margin-top: 0;
-}
