@@ -14,3 +14,12 @@ export const getCharacters = (page = 1) => {
     })
     ));
 };
+
+// write a function that gets a random number
+// get random number between however many characters there is
+// return fetch API + random number with temp litteral
+// .then(res => ([res.ok, res.json()]))
+// .then(([ok, json]) => {
+//   if(!ok) throw 'Unable to fetch characters';
+
+//   return json;

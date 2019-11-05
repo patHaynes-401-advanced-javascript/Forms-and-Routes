@@ -14,13 +14,14 @@ export default class CharacterDisplay extends Component {
       .then((characters) => this.setState({ characters, loading: false }));
   }
 
-  componentDidMount() {
-    this.fetchCharacters();
-  }
-
   render() {
-    const { characters } = this.state;
-    return <Characters items={characters} />;
+    return (
+      <>
+        <button onClick={this.fetchCharacters}>Rick and Morty Character!
+        </button>
+        <Characters items={this.state.characters} />
+      </>
+    );
   }
 
 }
