@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../Characters/Container.css';
 
 export default function CharacterContainer({ children }) {
   return (
     <>
-      <section>{children}</section>
+      <section className={styles.Container}>{children}</section>
     </>
   );
 }

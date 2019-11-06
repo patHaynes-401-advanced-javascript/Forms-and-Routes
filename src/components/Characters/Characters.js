@@ -17,7 +17,7 @@ export default function Characters({ items }) {
 
 Characters.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string.isRequired,
+    _id: PropTypes.string,
     name: PropTypes.string,
     image: PropTypes.string.isRequired
   }))

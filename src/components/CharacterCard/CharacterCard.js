@@ -13,7 +13,7 @@ export default function CharacterCard({ name, image }) {
 }
 
 CharacterCard.propTypes = {
-  _id: PropTypes.string.isRequired,
+  _id: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string.isRequired,
 };

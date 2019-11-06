@@ -15,11 +15,15 @@ export const getCharacters = (page = 1) => {
     ));
 };
 
-// write a function that gets a random number
-// get random number between however many characters there is
-// return fetch API + random number with temp litteral
-// .then(res => ([res.ok, res.json()]))
-// .then(([ok, json]) => {
-//   if(!ok) throw 'Unable to fetch characters';
+// export const randomCharacter = Math.floor(Math.random() * 6) + 1;
 
-//   return json;
+// export const getSingleCharacter = () => {
+//   return fetch('https://rickandmortyapi.com/api/character/2')
+//     .then(res => ([res.ok, res.json()]))
+//     .then(([ok, json]) => {
+//       if(!ok) throw 'Unable to fetch characters';
+//       return json;
+//     });
+// };
+
+
