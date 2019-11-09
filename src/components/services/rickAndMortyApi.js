@@ -1,29 +1,39 @@
-export const getCharacters = (page = 1) => {
-  return fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
+export const getSingleCharacter = () => {
+  const randomCharacter = Math.floor(Math.random() * 6) + 1;
+  return fetch(`https://rickandmortyapi.com/api/character/${randomCharacter}`)
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
       if(!ok) throw 'Unable to fetch characters';
-
       return json;
-    })
-    .then(({ results }) => results.map(character => ({
-      name: character.name,
-      species: character.species,
-      status: character.status,
-      image: character.image
-    })
-    ));
+    });
 };
 
-// export const randomCharacter = Math.floor(Math.random() * 6) + 1;
 
-// export const getSingleCharacter = () => {
-//   return fetch('https://rickandmortyapi.com/api/character/2')
+export const searchCharacters = (search) => {
+  return fetch(`https://rickandmortyapi.com/api/character/?name=${search}`)
+    .then(res => ([res.ok, res.json()]))
+    .then(([ok, json]) => {
+      if(!ok) throw 'Unable to fetch character';
+      return json;
+    });
+};
+
+
+
+
+// export const getCharacters = (page = 1) => {
+//   return fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
 //     .then(res => ([res.ok, res.json()]))
 //     .then(([ok, json]) => {
 //       if(!ok) throw 'Unable to fetch characters';
+
 //       return json;
-//     });
+//     })
+//     .then(({ results }) => results.map(character => ({
+//       name: character.name,
+//       species: character.species,
+//       status: character.status,
+//       image: character.image
+//     })
+//     ));
 // };
-
-
