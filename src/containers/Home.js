@@ -1,43 +1,46 @@
-// import React, { Component } from 'react';
-// import { getSingleCharacter, searchCharacters } from '../components/services/rickAndMortyApi';
-// import CharacterCard from '../components/CharacterCard/CharacterCard';
-// import CharacterContainer from '../components/CharacterContainer/CharacterContainer';
-// import Search from '../components/Search/Search';
+import React, { useState } from 'react';
+import { getSingleCharacter } from '../components/services/rickAndMortyApi';
+import PropTypes from 'prop-types';
+import CharacterCard from '../components/CharacterCard/CharacterCard';
+import CharacterContainer from '../components/CharacterContainer/CharacterContainer';
+import Search from '../components/Search/Search';
 
-// export default class CharacterDisplay extends Component {
-//   state = {
-//     character: {},
-//     loading: true,
-//     searchTerm: ''
-//   }
+export default function Home(props) {
 
-//   fetchCharacter = () => {
-//     this.setState({ loading: true });
-//     getSingleCharacter()
-//       .then((character) => this.setState({ character, loading: false }));
-//   }
+  const [character, setCharacter] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
-//   handleSubmit = event => {
-//     event.preventDefault();
-//     searchCharacters(searchTerm);
-//   };
+  const handleSubmit = event => {
+    event.preventDefault();
+    props.history.push(`/characters/${searchTerm}`);
+  };
 
-//   handleChange = ({ target }) => {
-//     setSearchTerm(target.value);
-//   };
+  const handleChange = ({ target }) => {
+    setSearchTerm(target.value);
+    console.log(target.value);
+  };
 
-//   render() {
-//     return (
-//       <>
-//         <CharacterContainer >
-//           <button onClick={this.fetchCharacter}>Rick and Morty Character!</button>
-//           <CharacterCard name={this.state.name} image={this.state.character.image} />
-//         </CharacterContainer >
-//         <Search
-//           handleSubmit={handleSubmit}
-//           handleChange={handleChange} />
-//       </>
-//     );
-//   }
+  const fetchCharacter = () => {
+    getSingleCharacter()
+      .then((character) => setCharacter(character));
+  };
 
-// }
+  return (
+    <>
+      <CharacterContainer >
+        <button onClick={fetchCharacter}>Rick and Morty Character!</button>
+        <CharacterCard name={name} image={character.image} />
+      </CharacterContainer >
+      <Search
+        setSearchTerm={searchTerm}
+        handleSubmit={handleSubmit}
+        handleChange={handleChange} />
+    </>
+  );
+
+}
+
+Home.propTypes = {
+  history: PropTypes.object
+}
+;

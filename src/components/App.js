@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from '../containers/Home-Refac';
+import Home from '../containers/Home';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import ListPage from '../containers/List-Page';
