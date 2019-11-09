@@ -8,16 +8,16 @@ body {
 }
 .Header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-size: 40pt;
-    color: white;
     margin-top: 0;
+    height: 350px;
     background-color: black;
 
     h1 {
       color: rgb(16, 206, 212);
    font-family: "get-schwifty";
-   font-size: 2em;
    -webkit-text-stroke-color: #000000;
    -webkit-text-stroke-width: 1px;
    text-shadow:
@@ -32,6 +32,12 @@ body {
    0 0 12px rgb(60, 253, 26, .7),
    0 0 10px rgb(213, 255, 63, .7);
    letter-spacing: .03em;
+    }
+
+    a {
+      font-family: "get-schwifty";
+      text-decoration: none;
+      color: whitesmoke;
     }
   }
 

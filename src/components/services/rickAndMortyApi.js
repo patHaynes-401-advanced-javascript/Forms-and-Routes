@@ -9,8 +9,8 @@ export const getSingleCharacter = () => {
 };
 
 
-export const searchCharacters = (search) => {
-  return fetch(`https://rickandmortyapi.com/api/character/?name=${search}`)
+export const searchCharacters = (search, page) => {
+  return fetch(`https://rickandmortyapi.com/api/character/?name=${search}&page=${page}`)
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
       if(!ok) throw 'Unable to fetch character';
